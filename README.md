@@ -1,5 +1,8 @@
 # alert-msg-stack
 
+## Demo
+![demo](demo/demo.gif | width = 100)
+
 ## Getting Started
 
 **important elements**
