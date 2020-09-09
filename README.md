@@ -1,7 +1,7 @@
 # alert-msg-stack
 
 ## Demo
-![demo](demo/demo.gif | width = 100)
+<img src="/demo/demo.gif" height="600"/>
 
 ## Getting Started
 
