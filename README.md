@@ -35,3 +35,24 @@ const options = {
 }
 popup.appendMsgInStack(options)
 ```
+
+## Property and Customize
+
+**popup.init()**
+| Parameter | Required | Default | Options | Type | Description |
+| --------- | -------- | ------- | ------- | ---- | ----------- |
+| `defaultTimeout` | `false` | `3000` | `number` | `number` | the time out for message removing |
+| `position` | `false` | `center` | `center`, `bottom`, `right`, `top`, `left` <br> `bottom right`, `bottom left` <br> `top left`, `top right` | `string` | the position of the message stack in screen |
+
+<br/><br/><br/>
+
+
+**popup.appendMsgInStack(options: Object)**
+| Parameter | Required | Default | Options | Type | Description |
+| --------- | -------- | ------- | ------- | ---- | ----------- |
+| `type` | `true` | `info` | `error`, `success`, `warning`, `info` | `string` | the style of the message body |
+| `id` | `false` | ``` Math.random().toString(36).slice(5) + Date.now() ``` | any string | `string` | the id to identify message <br> you must provide `id` **if you want prevent duplicate call when the message is still on the screen** |
+| `msg` | `true` | `` | `` | `string` | the message body, could be html |
+| `title` | `false` | the type of the message | `` | `string` | the title of the message |
+| `timout` | `false` | `defaultTimeout` | `` | `number` | will override the `defaultTimeout` of this message item only |
+| `from` | `false` | `home` | `string` | the source of the message called |
