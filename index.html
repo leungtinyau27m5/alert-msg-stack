@@ -3,12 +3,57 @@
 
 <head>
     <title>Alert Message Stack With Jquery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .info {
+            background-color: #209CEE;
+            color: white;
+        }
+        
+        .success {
+            background-color: #48C774;
+            color: white;
+        }
+        
+        .error {
+            background-color: #FF3860;
+            color: white;
+        }
+        
+        .warning {
+            background-color: #FFDD57;
+            color: black;
+        }
+        
+        button {
+            border: 0;
+            padding: 20px 55px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        body,
+        html {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 
 <body>
     <script src="/jquery.min.js"></script>
     <script src="/popup/popup.js"></script>
+    <button class="info" onclick="popup.appendMsgInStack({type: 'info', msg: 'it is an info message'})">Info Message</button>
+    <button class="success" onclick="popup.appendMsgInStack({type: 'success', msg: 'it is an info message'})">Success Message</button>
+    <button class="error" onclick="popup.appendMsgInStack({type: 'error', msg: 'it is an info message'})">Error Message</button>
+    <button class="warning" onclick="popup.appendMsgInStack({type: 'warning', msg: 'it is an info message'})">Warning Message</button>
 
+    <button class="info" style="margin-top: 300px; background-color: grey" onclick="popup.appendMsgInStack({type: 'info', msg: 'it is an info message', id: 'same'})">Message With Same Id</button>
+    <button class="warning" style="background-color: grey" onclick="popup.appendMsgInStack({type: 'info', msg: 'it is an info message', id: 'same'})">Message With Same Id</button>
 </body>
+<script>
+    popup.init(5000, 'center')
+</script>
 
 </html>
