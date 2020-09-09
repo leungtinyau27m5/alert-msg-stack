@@ -51,8 +51,8 @@ popup.appendMsgInStack(options)
 | Parameter | Required | Default | Options | Type | Description |
 | --------- | -------- | ------- | ------- | ---- | ----------- |
 | `type` | `true` | `info` | `error`, `success`, `warning`, `info` | `string` | the style of the message body |
-| `id` | `false` | ``` Math.random().toString(36).slice(5) + Date.now() ``` | any string | `string` | the id to identify message <br> you must provide `id` **if you want prevent duplicate call when the message is still on the screen** |
 | `msg` | `true` |  |  | `string` | the message body, could be html |
+| `id` | `false` | ``` Math.random().toString(36).slice(5) + Date.now() ``` | any string | `string` | the id to identify message <br> you must provide `id` **if you want prevent duplicate call when the message is still on the screen** |
 | `title` | `false` | the type of the message |  | `string` | the title of the message |
 | `timout` | `false` | `defaultTimeout` |  | `number` | will override the `defaultTimeout` of this message item only |
 | `from` | `false` | `home` |  | `string` | the source of the message called |
