@@ -115,27 +115,29 @@ class PopupMsgItem {
     }
 
     startCounting() {
-        if (this.times > 0) {
-            var that = this
-            setTimeout(function() {
+        var that = this
+        this.timing = setInterval(function() {
+            if (that.times > 0) {
                 that.times--;
-                that.startCounting()
-            }, 1000)
-        } else {
-            this.forceRemove()
-        }
+            } else {
+                that.forceRemove()
+            }
+        }, 1000)
     }
     repeatId() {
+        clearInterval(this.timing)
         this.times = this.timeout / 1000
         $(this.wrapperNode).stop()
         $(this.wrapperNode).css('opacity', 1)
         $(this.wrapperNode).fadeOut(this.timeout)
+        this.startCounting()
     }
     forceRemove() {
         var idx = this.stack.findIndex(ele => ele.id === this.id)
+        clearInterval(this.timing)
         if (idx > -1) {
             $(this.parentNode).find('#' + this.id).remove()
-            this.stack.splice(idx)
+            this.stack.splice(idx, 1)
         }
     }
 }
